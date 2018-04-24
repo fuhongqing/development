@@ -1,0 +1,621 @@
+.page{
+    padding: 0 20px;
+    margin-bottom: 0;
+}
+.gap{
+    height: 10px;
+    width: calc(100% + 40px);
+    background:  #F1F1F1;
+    position: relative;
+    right: 20px;
+}
+/*市区板块*/
+#registerAttr .dropdown-inner,#registerAttr input{
+    position: relative;
+    width: 108px;
+}
+#registerAttr>.control-label{
+    width: 72px;
+}
+/*上传附件*/
+#btn-file {
+    display: none;
+}
+/*面包屑导航*/
+div.tabs{
+    height: 36px;
+    line-height: 36px;
+    margin-top: 50px;
+    border-bottom: 1px solid #DDDDDD;
+}
+div.tabs>span{
+    font-size: 12px;
+}
+/*导航title*/
+h3.title{
+    margin-top: 14px;
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 1px solid #DDDDDD;
+}
+/*修改按钮样式*/
+a.modifyBtn{
+    display: inline-block;
+    width: 70px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 4px;
+    background: #ED9127;
+    color: #fff;
+}
+a.modifyBtn:hover{
+    background: #DB7B0D;
+}
+/*项目联系人*/
+#contacts{
+    width: 286px;
+    height: 197px;
+    border: 1px solid #DDDDDD;
+    margin-top: 10px;
+}
+#contacts>li{
+    padding: 0 10px;
+}
+#contacts>li:first-child{
+    margin-bottom: 10px;
+}
+#contacts>li:last-child{
+    height: 28px;
+    line-height: 28px;
+}
+#contacts h2{
+    margin-top: 10px;
+}
+#contacts .modifyBtn{
+    margin-top: 3px;
+}
+#contactList{
+    height: 115px;
+    overflow: auto;
+}
+#contactList>li{
+    margin-bottom: 5px;
+}
+#contactList>li>div{
+    margin-bottom: 8px;
+}
+#contactList .linkName{
+    display: inline-block;
+    width: 60px;
+}
+#contactList>li>a{
+    position: relative;
+    bottom: 5px;
+}
+#contactList>li>a,#contacts>li:last-child>a{
+    display: inline-block;
+    width: 70px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    color: #ED9127;
+}
+#contacts>li:last-child{
+    border-top: 1px solid #DDDDDD;
+}
+#basicInfo{
+    padding: 20px 0;
+}
+#basicInfo>ul{
+    float: left;
+}
+#basicInfo>ul:first-child{
+    width: 410px;
+}
+#basicInfo>ul:first-child>li:first-child{
+    margin-bottom: 20px;
+}
+#basicInfo .addrLi{
+    position: relative;
+}
+#basicInfo .firstRowLi{
+    margin-bottom: 20px;
+}
+#basicInfo .addrLi>img{
+    position: relative;
+    margin-bottom: 20px;
+    bottom: 6px;
+}
+#md1{
+    margin-bottom: 25px;
+}
+#basicInfo>ul:nth-child(2){
+    width: 200px;
+}
+#basicInfo>ul:last-child{
+    width: 220px;
+}
+#basicInfo>ul.noFirstUl{
+    margin-top: 43px;
+}
+/*#basicInfo>ul.noFirstUl>li{*/
+    /*margin-bottom: 23px;*/
+/*}*/
+/*键*/
+span.key{
+    font-size: 16px;
+    color: #B2B2B2;
+    margin-right: 10px;
+    width: 64px;
+    display: inline-block;
+}
+#basicInfo>ul:last-child .key{
+    width: 96px;
+    display: inline-block;
+}
+#basicInfo img{
+    margin-left: 20px;
+}
+#basicInfo .name{
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 38px;
+}
+#basicInfo .soldState,#basicInfo .buildType{
+    height: 14px;
+    line-height: 12px;
+    text-align: center;
+    display: inline-block;
+    width: 30px;
+    margin-right: 7px;
+    border: 1px solid #ED9127;
+    color: #ed9127;
+    font-size: 12px;
+    -webkit-transform: scale(0.83);
+    transform: scale(0.83);
+}
+#basicInfo .soldState{
+    border-color: #F25466;
+    color: #F25466;
+}
+/*section*/
+section>.rightUl{
+    display: inline-block;
+}
+section>ul{
+    margin-top: 10px;
+}
+section>ul>li{
+    margin-bottom: 20px;
+}
+section>ul>li>span{
+    color: #B2B2B2;
+    display: inline-block;
+    width: 104px;
+}
+section>ul>li>span:last-child{
+    width: 438px;
+    color: #333333;
+    vertical-align: middle;
+}
+section>a{
+    vertical-align: top;
+    margin-top: 4px;
+}
+/*写跟进*/
+#followSelect{
+    width: 1202px;
+    margin: 0 auto;
+    height: 46px;
+    line-height: 46px;
+    background: #EEEBE8;
+    padding: 12px 20px 0 20px;
+}
+#followSelect .dropdown-inner,#followEdit .dropdown-inner{
+    background: #fff;
+    right: 28px;
+    height: 36px;
+    line-height: 30px;
+    position: relative;
+    bottom: 7px;
+    width: 185px;
+}
+#followEdit{
+    display: none;
+}
+#followEdit .dropdown-inner{
+    width: 234px;
+}
+#followSelect .control-label,#followEdit .control-label{
+    text-align: left;
+    font-size: 14px;
+}
+/*下拉框角标*/
+#followSelect .dropdown-inner .caret,#followEdit .dropdown-inner .caret{
+    top: 7px;
+    position: relative;
+}
+/*写跟进*/
+.followPage{
+    margin-top: 0;
+    padding-top: 20px;
+}
+.followPage>footer{
+    text-align: right;
+}
+#followEdit>div{
+    height: 50px;
+    padding: 14px 10px 0 7px;
+    border: 1px solid #DDDDDD;
+    border-bottom: none;
+}
+#followEdit>div>form:last-child .dropdown-inner{
+    right: 0;
+}
+#followEdit .lf .dropdown-inner{
+    margin-right: 85px;
+}
+#followProgress{
+    left: 0;
+}
+#followObjEdit .dropdown-inner{
+    right: 0;
+}
+#followEdit>textarea {
+    margin-top: -25px;
+    width: 100%;
+    height: 98px;
+    padding: 10px;
+    border-color: #DDDDDD;
+    margin-bottom: 20px;
+}
+#followEdit>textarea::-webkit-input-placeholder{
+    color:#BEBEBE;
+}
+#followEdit>textarea:focus {
+    outline: none;
+    border-color: #ED9127;
+}
+#followEdit>footer{
+    text-align: right;
+}
+#followEdit>footer>a{
+    border: 1px solid #ed9127;
+}
+#upLoad{
+    visibility: hidden;
+    background: #fff;
+    color: #ed9127;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+/*跟进列表*/
+#followMenu{
+    padding: 20px 0 10px 0;
+}
+#followMenu ul>li{
+    margin-bottom: 10px;
+}
+#followMenu .fileLi{
+    height: 28px;
+    line-height: 28px;
+    background: #F4F1EC;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+#followMenu ul>.timeLi{
+    height: 32px;
+    line-height: 32px;
+    text-align: right;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+#followMenu b{
+    font-size: 20px;
+    margin-right: 20px;
+}
+#followMenu>.lists{
+    min-height: 90px;
+    border-bottom: 1px dashed #DDDDDD;
+    margin-bottom: 20px;
+}
+#followMenu>.lists span{
+    display: inline-block;
+    min-width: 62px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #BABABA;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+#followMenu a.downLoad{
+    color: #ED9127;
+    margin-left: 48px;
+}
+#followMenu a.photo{
+    color: #BABABA;
+}
+#followMenu span.time{
+    color: #BABABA;
+}
+#followMenu span.file{
+    color: #BABABA;
+}
+#followLists{
+    color: #BABABA;
+    font-size: 12px;
+}
+/*模态框遮盖*/
+#cover {
+    z-index: 15;
+    background-color: rgba(153, 153, 153, 0.75);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.sui-modal{
+    width: 1000px;
+    left: 29%;
+}
+.sui-modal .dropdown-inner{
+    width: 400px;
+    height: 36px;
+    line-height: 30px;
+}
+.sui-modal .sui-row-fluid{
+    margin-bottom: 10px;
+}
+.sui-modal .sui-form input[type="text"],#buildingType,#support {
+    width: 400px;
+    height: 36px;
+}
+.sui-modal .sui-form.form-horizontal .control-label{
+    text-align: left;
+    margin-right: 50px;
+    width: 72px;
+    height: 36px;
+    font-size: 14px;
+}
+.sui-modal .modal-footer {
+    text-align: center;
+    background: #fff;
+    position: relative;
+    margin-bottom: 10px;
+}
+.sui-modal .modal-footer > button {
+    width: 70px;
+    height: 26px;
+    line-height: 13px;
+    text-align: center;
+    background: #ED9127;
+    border-radius: 4px;
+    border: 1px solid #ED9127;
+    color: #fff;
+}
+.sui-modal .modal-footer .modify:hover {
+    background: #DB7B0D;
+}
+.sui-modal .modal-footer > button.cancel {
+    border-color:  #DDDDDD;
+    color: #BABABA;
+    background: #F8F8F8;
+}
+.sui-modal .modal-footer .sui-btn+.sui-btn{
+    margin-left: 43px;
+}
+#myModal5 input.fromTo,#myModal6 input.fromTo{
+    width: 176px;
+}
+#myModal5 .controls>span.to,#myModal6 .controls>span.to{
+    margin: 0 11px;
+}
+#myModal5 img.date{
+    position: relative;
+    right: 40px;
+    bottom: 4px;
+}
+#myModal6{
+    width: 1110px;
+}
+#myModal6 .modal-body{
+    height: 412px;
+    overflow: auto;
+}
+#myModal6 .agentDate{
+    position: absolute;
+    left: 210px;
+    bottom: 2px;
+}
+.agentName,.agentTime{
+    display: none;
+}
+#myModal6 img.end{
+    left: 428px;
+}
+#myModal7 img.date,#myModal8 img.date{
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+}
+#myModal8{
+    top:0!important;
+}
+/*下拉框角标*/
+.sui-modal .dropdown-inner .caret{
+    top: 7px;
+    position: relative;
+}
+#myModal1 .modal-body{
+    height: 410px;
+}
+/*新增联系人*/
+#myModal2{
+    width: 450px;
+    left: 50%;
+}
+#myModal2 .modal-body{
+    height: 210px;
+}
+#myModal2 .modal-body form{
+    height: 36px;
+}
+/*设置维护人*/
+#myModal3{
+    width: 450px;
+    left: 50%;
+}
+#myModal3 .modal-body{
+    height: 160px;
+}
+/*体量*/
+#myModal4{
+    width: 1035px;
+}
+/*销售信息*/
+#myModal5{
+    width: 1090px;
+}
+
+/*建筑类型*/
+#buildingTypeMenu,#supportMenu{
+    display: none;
+    border-radius: 0 0 2px 2px;
+    position: absolute;
+    background-color: #fff;
+    z-index: 9;
+    max-height: 300px;
+    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    left: 3px;
+    top: 44px;
+    width: 400px;
+}
+#buildingTypeMenu>li,#supportMenu>li{
+    height: 30px;
+    line-height: 30px;
+    padding:0 8px;
+}
+#buildingTypeMenu>li>img,#supportMenu>li>img{
+    display: none;
+    position: relative;
+    top: 10px;
+}
+#buildingTypeMenu>li:hover,#supportMenu>li:hover{
+    background: #ED9127;
+    color: #fff;
+}
+#buildingType,#support{
+    line-height: 36px;
+    border: 1px solid #DDDDDD;
+    font-size: 14px;
+    border-radius: 4px;
+    padding-left: 8px;
+    color:#BEBEBE;
+    cursor: pointer;
+}
+/*甲方支持,建筑类型*/
+#support>a,#buildingType>a{
+    border: 1px solid rgba(237, 145, 39, 0.13);
+    color: #ED9127;
+    font-size: 12px;
+    border-radius: 4px;
+    background: rgba(237, 145, 39, 0.12);
+    display: inline-block;
+    min-width: 65px;
+    height: 24px;
+    line-height: 21px;
+    position: relative;
+    padding-left: 5px;
+}
+#support>a>img,#buildingType>a>img{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+.type>div>.caret{
+    position: relative;
+    right: 11px;
+    top: 14px;
+}
+#cityNameMenu{
+    display: none;
+    max-height: 300px;
+    overflow: auto;
+    position: absolute;
+    width: 108px;
+    left: 90px;
+    top: 112px;
+    z-index: 10;
+    border: 1px solid #ccc;
+    box-shadow: 1px 3px 3px rgba(51, 48, 43, 0.84);
+    background: #fff;
+    height: auto;
+    border-radius: 4px;
+}
+#cityNameMenu>li{
+    color: #333;
+    text-align: left;
+    padding-left: 10px;
+    cursor: pointer;
+}
+#cityNameMenu>li:hover{
+    color: #fff;
+    background: #ed9127;
+}
+#boroughDrop{
+    left: 10px;
+    position: relative;
+    bottom: 6px;
+}
+#pages {
+    min-height: 92px;
+}
+#pages li {
+    float: left;
+    height: 28px;
+    line-height: 26px;
+    text-align: center;
+}
+#pages li a {
+    display: inline-block;
+    width: 36px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #DDDDDD;
+    border-left: none;
+    color: #333333;
+}
+#pageNum > li.gtFour,#pageNum > li.nextMore{
+    display: none;
+}
+#pageNum > li.active a{
+    color: #fff;
+    background: #ED9127;
+    border-color: #ED9127;
+}
+#pageNum > li.active > a:hover {
+    background: #DB7B0D;
+}
+#pages li.prev > a {
+    border-left: 1px solid #DDDDDD;
+}
+#pages li.active a {
+    color: #fff;
+    background: #ED9127;
+    border-color: #ED9127;
+}
+#pages li.disabled a {
+    background: #EEEEEE;
+    color: #DDDDDD;
+}

@@ -1,0 +1,1366 @@
+<!--<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="x-ua-compatible" content="IE=7;IE=9" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <title>楼盘详情</title>
+    <link href="http://www.ehaofang.com/img/ef.ico" type="image/x-icon" rel="icon"/>
+    <link href="http://www.ehaofang.com/img/ef.ico" type="image/x-icon" rel="shortcut icon"/>
+    <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet"/>
+    <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui-append.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/3.2.1/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../static/css/init.css"/>
+    <link rel="stylesheet" type="text/css" href="../nav/css/style.css"/>
+    <link rel="stylesheet" href="../static/css/floorDetail.css"/>
+</head>
+<body>
+<div class="topWrap">
+    <div class="top">
+        <div class="logo">
+            <a href="javascript:;">
+                <img src="../nav/img/Logo.png" alt="易好房楼盘开发" title="易好房楼盘开发" />
+            </a>
+        </div>
+        <div class="mine">
+            <div></div>
+            <a id="userName" href="javascript:;"></a>
+            <a href="javascript:;">退出</a>
+        </div>
+        <ul class="nav">
+            <li class="singleNav">首页</li>
+            <li class="singleNav">项目经营</li>
+            <li class="navActive1 navActive">项目开发
+                <i class=" icon-caret-down"></i>
+                <div>
+                    <dl>
+                        <p id="property" class="navItemActive1 navItemActive"><a href="/floorLists">开发楼盘</a></p>
+                        <p id="land"><a href="javascript:;">土地拍卖</a></p>
+                        <span></span>
+                    </dl>
+                </div>
+            </li>
+            <li>渠道
+                <i class=" icon-caret-down"></i>
+                <div>
+                    <dl>
+                        <p><a href="javascript:;">渠道公司</a></p>
+                        <p><a href="javascript:;">门店</a></p>
+                        <span></span>
+                    </dl>
+                </div>
+
+            </li>
+            <li class="singleNav">客户</li>
+            <li>交易中心
+                <i class=" icon-caret-down"></i>
+                <div>
+                    <dl>
+                        <p><a href="javascript:;">交易列表</a></p>
+                        <p><a href="javascript:;">申佣列表</a></p>
+                        <span></span>
+                    </dl>
+                </div>
+            </li>
+            <li>财务中心
+                <i class=" icon-caret-down"></i>
+                <div>
+                    <dl>
+                        <p id="financeCenter"><a href="javascript:;">报销</a></p>
+                        <p><a href="javascript:;">盈亏损益</a></p>
+                        <span></span>
+                    </dl>
+                </div>
+            </li>
+            <li>组织架构
+                <i class=" icon-caret-down"></i>
+                <div>
+                    <dl>
+                        <p><a href="javascript:;">员工中心</a></p>
+                        <p><a href="javascript:;">部门管理</a></p>
+                        <span></span>
+                    </dl>
+                </div>
+            </li>
+            <li class="singleNav">数据中心</li>
+        </ul>
+    </div>
+</div>
+    <div class="page">
+        <!--基本信息-->
+        <div class="tabs"><span>轩天实业&gt;</span><span>楼盘&gt;</span><span>楼盘详情</span></div>
+        <h3 class="title">基本信息</h3>
+        <header class="clear">
+            <!--项目联系人-->
+            <ul id="contacts" class="gt">
+                <li class="clear">
+                    <a id="md2" class="gt modifyBtn" data-toggle="modal" data-target="myModal2" data-keyboard="false">新增</a>
+                    <div id="myModal2" tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" aria-hidden="true" class="sui-close cancel">×</button>
+                                    <h4 class="modal-title">新增联系人</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="sui-form form-horizontal">
+                                        <div class="control-group">
+                                            <div class="controls">
+        <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="job">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden"/><i class="caret"></i><span class="job">请选择</span>
+        </a>
+        <ul  role="menu" id="jobMenu" class="sui-dropdown-menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" >销售员</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" >销售经理</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" >营销总</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" >项目总经理 </a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" >股东</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" >董事长</a></li>
+        </ul></span></span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form class="sui-form form-horizontal">
+                                        <div class="control-group">
+                                            <div class="controls">
+                                                <input type="text" id="LinkName"  placeholder="请输入联系人姓名" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form class="sui-form form-horizontal">
+                                        <div class="control-group">
+                                            <div class="controls">
+                                                <input type="text" id="LinkPhone" placeholder="请输入联系人电话" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" data-ok="modal" class="sui-btn modify">修改</button>
+                                    <button type="button" data-dismiss="modal" class="sui-btn cancel">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>项目联系人</h2>
+                </li>
+                <li>
+                    <ul id="contactList">
+                        <!--动态-->
+                    </ul>
+                </li>
+                <li class="clear">
+                    <a id="md3" class="gt" data-toggle="modal" data-target="myModal3" data-keyboard="false">设置</a>
+                    <div id="myModal3" tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" aria-hidden="true" class="sui-close cancel">×</button>
+                                    <h4 class="modal-title">设置维护人</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="sui-form form-horizontal">
+                                        <div class="control-group">
+                                            <div class="controls">
+        <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="weihuren">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden"/><i class="caret"></i><span class="job">请选择</span>
+        </a>
+        <ul  role="menu" id="weihurenMenu" class="sui-dropdown-menu">
+            <!--动态-->
+        </ul></span></span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" data-ok="modal" class="sui-btn modify">修改</button>
+                                    <button type="button" data-dismiss="modal" class="sui-btn cancel">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span>当前维护人：</span><span class="name"></span>
+                </li>
+            </ul>
+            <div id="basicInfo" class="clear">
+                <ul class="firstUl">
+                    <!--动态-->
+                </ul>
+                <ul class="noFirstUl second">
+                    <!--动态-->
+                </ul>
+                <ul class="noFirstUl last">
+                    <!--动态-->
+                </ul>
+            </div>
+            <a id="md1" class="modifyBtn" data-toggle="modal" data-target="myModal1" data-keyboard="false">修改</a>
+            <div id="cover"></div>
+            <div id="myModal1" tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal" aria-hidden="true" class="sui-close cancel">×</button>
+                            <h4 class="modal-title">基本信息</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="grid-demo">
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">项目名称</label>
+                                                <div class="controls">
+                                                    <input type="text" id="projectName" placeholder="请输入项目名称" />
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">项目地址</label>
+                                                <div class="controls">
+                                                    <input type="text" id="projectAddr" placeholder="请输入项目名称" />
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group" id="registerAttr">
+                                                <label class="control-label">区域</label>
+                                                <div class="controls">
+                                                    <!--市-->
+                                                    <input class="focusInput" type="text" id="cityName" placeholder="请输入城市" />
+                                                    <ul id="cityNameMenu">
+                                                        <!--动态-->
+                                                    </ul>
+                                                    <!--区-->
+                                                               <span class="sui-dropdown dropdown-bordered select">
+                                                                <span class="dropdown-inner" id="boroughDrop">
+                                                                <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+                                                                    <input type="hidden" /><i class="caret"></i><span>请选择</span>
+                                                                </a>
+                                                                <ul  role="menu" id="boroughMenu" class="sui-dropdown-menu">
+                                                                    <!--动态-->
+                                                                </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group type">
+                                                <label class="control-label">建筑类型</label>
+                                                <div class="controls sui-dropdown">
+                                                    <i class="caret gt"></i>
+                                                    <div id="buildingType" >请选择（多选）</div>
+                                                    <ul id="buildingTypeMenu">
+                                                        <li class="right0">
+                                                            <img src="../static/img/right.png" alt="" class="gt right"/>
+                                                            <div>别墅</div>
+                                                        </li>
+                                                        <li class="right1">
+                                                            <img src="../static/img/right.png" alt="" class="gt right"/>
+                                                            <div>住宅</div>
+                                                        </li>
+                                                        <li class="right2">
+                                                            <img src="../static/img/right.png" alt="" class="gt right"/>
+                                                            <div>商业</div>
+                                                        </li>
+                                                        <li class="right3">
+                                                            <img src="../static/img/right.png" alt="" class="gt right"/>
+                                                            <div>其他</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">在售状态</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="saleStatus">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="saleStatusMenu" class="sui-dropdown-menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" >待售</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" >在售</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" >售罄</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">抵押情况</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="mortgage">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="mortgageMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >有抵押</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >无抵押</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">建设进度</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="buildProgress">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="buildProgressMenu" class="sui-dropdown-menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" >打桩</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" >浇筑</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" >封顶</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" >竣工</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">可否贷款</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="isLoan">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="isLoanMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >否</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >是</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">可否限签</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="isSign">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="isSignMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >否</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" >是</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">开发商</label>
+                                                <div class="controls">
+                                                    <input type="text" id="developer" placeholder="全称" />
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">开发商</label>
+                                                <div class="controls">
+                                                    <input type="text" id="abbreviation" placeholder="简称" />
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-ok="modal" class="sui-btn modify">修改</button>
+                            <button type="button" data-dismiss="modal" class="sui-btn cancel">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="gap"></div>
+        <section id="countSection" class="clear">
+            <h3 class="title">体量</h3>
+            <ul class="lf">
+
+            </ul>
+            <ul class="rightUl">
+
+            </ul>
+            <a id="md4" class="modifyBtn" data-toggle="modal" data-target="myModal4" data-keyboard="false">修改</a>
+            <div id="myModal4" tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal" aria-hidden="true" class="sui-close cancel">×</button>
+                            <h4 class="modal-title">体量修改</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="grid-demo">
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">总货值</label>
+                                                <div class="controls">
+                                                    <input type="text" class="mustNum" id="totalPrice" placeholder="请输入内容"/> 亿
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">可售总价</label>
+                                                <div class="controls">
+                                                    <input type="text" class="mustNum" id="availablePrice" placeholder="请输入内容"/> 亿
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">总面积</label>
+                                                <div class="controls">
+                                                    <input type="text" class="mustNum" id="totalArea" placeholder="请输入内容"/> ㎡
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">可售面积</label>
+                                                <div class="controls">
+                                                    <input type="text" class="mustNum" id="availableArea" placeholder="请输入内容"/> ㎡
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">总套数</label>
+                                                <div class="controls">
+                                                    <input type="text" class="mustNum" id="totalSet" placeholder="请输入内容"/> 套
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">可售套数</label>
+                                                <div class="controls">
+                                                    <input type="text" class="mustNum" id="availableSet" placeholder="请输入内容"/> 套
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-ok="modal" class="sui-btn modify">修改</button>
+                            <button type="button" data-dismiss="modal" class="sui-btn cancel">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="saleSection" class="clear">
+            <h3 class="title">销售信息</h3>
+            <ul class="lf">
+
+            </ul>
+            <ul class="rightUl">
+
+            </ul>
+            <a id="md5" class="modifyBtn" data-toggle="modal" data-target="myModal5" data-keyboard="false">修改</a>
+            <div id="myModal5" tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal" aria-hidden="true" class="sui-close cancel">×</button>
+                            <h4 class="modal-title">销售信息修改</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="grid-demo">
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">单价区间</label>
+                                                <div class="controls">
+                                                    <input type="text" class="fromTo" id="lowPrice" placeholder="请输入内容"/>
+                                                    <span class="to">至</span>
+                                                    <input type="text" class="fromTo" id="highPrice" placeholder="请输入内容"/> 元/㎡
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">总价区间</label>
+                                                <div class="controls">
+                                                    <input type="text" class="fromTo" id="lowTotalPrice" placeholder="请输入内容"/>
+                                                    <span class="to">至</span>
+                                                    <input type="text" class="fromTo" id="highTotalPrice" placeholder="请输入内容"/> 万/套
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">备案价</label>
+                                                <div class="controls">
+                                                    <input type="text" class="fromTo" id="lowRecordPrice" placeholder="请输入内容"/>
+                                                    <span class="to">至</span>
+                                                    <input type="text" class="fromTo" id="highRecordPrice" placeholder="请输入内容"/> 元/㎡
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">底价区间</label>
+                                                <div class="controls">
+                                                    <input type="text" class="fromTo" id="bottomLowPrice" placeholder="请输入内容"/>
+                                                    <span class="to">至</span>
+                                                    <input type="text" class="fromTo" id="bottomHighPrice" placeholder="请输入内容"/> 元/㎡
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div data-toggle="datepicker" class="control-group input-daterange">
+                                                <label class="control-label">首次开盘时间</label>
+                                                <div class="controls">
+                                                    <img class="date gt" src="../static/img/date.png" alt=""/>
+                                                    <input type="text" id="openTime" class="input-medium" placeholder="请选择"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">体验情况</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="experience">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="experienceMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >不需要包装</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >部分包装</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >整体重新包装</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >烂尾楼</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">预售许可证号</label>
+                                                <div class="controls">
+                                                    <input type="text" id="permitCode" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div data-toggle="datepicker" class="control-group input-daterange">
+                                                <label class="control-label">许可证有效期</label>
+                                                <div class="controls">
+                                                    <img class="date gt" src="../static/img/date.png" alt=""/>
+                                                    <input type="text" id="permitTime" class="input-medium" placeholder="请选择"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-ok="modal" class="sui-btn modify">修改</button>
+                            <button type="button" data-dismiss="modal" class="sui-btn cancel">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="cooperateSection" class="clear">
+            <h3 class="title">合作情况</h3>
+            <ul class="lf">
+
+            </ul>
+            <ul class="rightUl">
+
+            </ul>
+            <a id="md6" class="modifyBtn" data-toggle="modal" data-target="myModal6" data-keyboard="false">修改</a>
+            <div id="myModal6" tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal" aria-hidden="true" class="sui-close cancel">×</button>
+                            <h4 class="modal-title">合作情况修改</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="grid-demo">
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">目前销售模式</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="saleModel">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="saleModelMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >独家代理</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >自销</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >联合代理</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">后续效应</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="followUp">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="followUpMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >后续合作机会</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >提高知名度</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">可接受销售类型</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="acceptSaleType">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="acceptSaleTypeMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >接受代理，目前无代理</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >独家代理 </a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >自销</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >联合代理</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >只做案场 </a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >只做联动</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">佣金方式</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="commissionMethod">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="commissionMethodMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >固定</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >跳点</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >报销</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group type">
+                                                <label class="control-label">甲方支持</label>
+                                                <div class="controls sui-dropdown">
+                                                    <i class="caret gt"></i>
+                                                    <div id="support" >
+                                                        请选择（多选）
+                                                    </div>
+                                                    <ul id="supportMenu">
+                                                        <li class="right0">
+                                                            <img class="right gt" src="../static/img/right.png" alt=""/>
+                                                            <div>班车</div>
+                                                        </li>
+                                                        <li class="right1">
+                                                            <img class="right gt" src="../static/img/right.png" alt=""/>
+                                                            <div>样板房</div>
+                                                        </li>
+                                                        <li class="right2">
+                                                            <img class="right gt" src="../static/img/right.png" alt=""/>
+                                                            <div>物料</div>
+                                                        </li>
+                                                        <li class="right3">
+                                                            <img class="right gt" src="../static/img/right.png" alt=""/>
+                                                            <div>盒饭</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">保证金</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="promise">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="promiseMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >0-50万</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >50-100万</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >100-200万</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >200-300万</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >500万以上</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">团购收取</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="groupSituation">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="groupSituationMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >甲方收</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >代理收</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">紧急程度</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="urgency">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="urgencyMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >不紧急</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >一般</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >需要马上进场</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div id="agent0" class="agentRow sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">代理公司名</label>
+                                                <div class="controls">
+                                                    <input type="text" class="focusInput" id="agentCompany0" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div data-toggle="datepicker" class="control-group input-daterange">
+                                                <label class="control-label">代理时间段</label>
+                                                <div class="controls">
+                                                    <input type="text" id="agentTimeStart0" class="fromTo date input-medium" placeholder="请选择"/>
+                                                    <img class="agentDate" src="../static/img/date.png" alt=""/>
+                                                    <span class="to">至</span>
+                                                    <input type="text" id="agentTimeEnd0" class="fromTo date dateEnd input-medium" placeholder="请选择"/>
+                                                    <img class="agentDate end" src="../static/img/date.png" alt=""/>
+                                                    <img class="add" src="../static/img/add.png" alt=""/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="agent0Rows" class="grid-demo">
+                                <!--代理-->
+                            </div>
+                            <div id="agentRows" class="grid-demo">
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-ok="modal" class="sui-btn modify">修改</button>
+                            <button type="button" data-dismiss="modal" class="sui-btn cancel">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="landSection" class="clear">
+            <h3 class="title">土地情况</h3>
+            <ul class="lf">
+
+            </ul>
+            <ul class="rightUl">
+
+            </ul>
+            <a id="md7" class="modifyBtn" data-toggle="modal" data-target="myModal7" data-keyboard="false">修改</a>
+            <div id="myModal7" tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal" aria-hidden="true" class="sui-close cancel">×</button>
+                            <h4 class="modal-title">土地情况修改</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="grid-demo">
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div data-toggle="datepicker" class="control-group input-daterange">
+                                                <label class="control-label">竞得日期</label>
+                                                <div class="controls">
+                                                    <input type="text" id="competitiveDate" class="date input-medium" placeholder="请选择"/>
+                                                    <img class="date" src="../static/img/date.png" alt=""/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">建筑用地面积</label>
+                                                <div class="controls">
+                                                    <input type="text" id="buildingArea" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">起始价</label>
+                                                <div class="controls">
+                                                    <input type="text" id="startingPrice" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">竞得价</label>
+                                                <div class="controls">
+                                                    <input type="text" id="competitivePrice" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">用地性质</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="landType">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="landTypeMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >住宅</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >商业/办公</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >工业</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >其他</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">产权年限</label>
+                                                <div class="controls">
+                                                    <input type="text" id="rightYears" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">容积率</label>
+                                                <div class="controls">
+                                                    <input type="text" id="plotRatioStart" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">楼面价</label>
+                                                <div class="controls">
+                                                    <input type="text" id="floorPrice" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-ok="modal" class="sui-btn modify">修改</button>
+                            <button type="button" data-dismiss="modal" class="sui-btn cancel">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="detailSection" class="clear">
+            <h3 class="title">楼盘详情</h3>
+            <ul class="lf">
+
+            </ul>
+            <ul class="rightUl">
+
+            </ul>
+            <a id="md8" class="modifyBtn" data-toggle="modal" data-target="myModal8" data-keyboard="false">修改</a>
+            <div id="myModal8" tabindex="-1" role="dialog" data-hasfoot="false" class="sui-modal hide fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal" aria-hidden="true" class="sui-close cancel">×</button>
+                            <h4 class="modal-title">楼盘详情修改</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="grid-demo">
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">物业公司</label>
+                                                <div class="controls">
+                                                    <input type="text" id="propertyCompany" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div data-toggle="datepicker" class="control-group input-daterange">
+                                                <label class="control-label">竣工时间</label>
+                                                <div class="controls">
+                                                    <input type="text" id="completionTime" class="date input-medium" placeholder="请选择"/>
+                                                    <img class="date" src="../static/img/date.png" alt=""/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">物业类型</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="propertyType">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="propertyTypeMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >别墅</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >住宅</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >商铺</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1" >商住</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div data-toggle="datepicker" class="control-group input-daterange">
+                                                <label class="control-label">最早交房</label>
+                                                <div class="controls">
+                                                    <input type="text" id="checkRoom" class="date input-medium" placeholder="请选择"/>
+                                                    <img class="date" src="../static/img/date.png" alt=""/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">容积率</label>
+                                                <div class="controls">
+                                                    <input type="text" id="plotRatio" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">绿化率</label>
+                                                <div class="controls">
+                                                    <input type="text" id="afforestationRate" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">规划户数</label>
+                                                <div class="controls">
+                                                    <input type="text" id="planningHouse" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">物业费</label>
+                                                <div class="controls">
+                                                    <input type="text" id="floorManagement" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">车位数</label>
+                                                <div class="controls">
+                                                    <input type="text" id="parkingSpace" placeholder="车位数"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">装修情况</label>
+                                                <div class="controls">
+                                <span class="sui-dropdown dropdown-bordered select">
+        <span class="dropdown-inner" id="decorate">
+        <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+            <input type="hidden" /><i class="caret"></i><span>请选择</span>
+        </a>
+        <ul  role="menu" id="decorateMenu" class="sui-dropdown-menu">
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >毛坯</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >简装修</a></li>
+            <li role="presentation" ><a role="menuitem" tabindex="-1"  >精装修</a></li>
+        </ul></span></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">楼栋总数</label>
+                                                <div class="controls">
+                                                    <input type="text" id="storiedBuilding" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">配套设施</label>
+                                                <div class="controls">
+                                                    <input type="text" id="completeSet" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">占地面积</label>
+                                                <div class="controls">
+                                                    <input type="text" id="coversArea" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">建筑面积</label>
+                                                <div class="controls">
+                                                    <input type="text" id="constructionArea" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="sui-row-fluid">
+                                    <div class="span6">
+                                        <form class="sui-form form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">周边商圈</label>
+                                                <div class="controls">
+                                                    <input type="text" id="businessCircle" placeholder="请输入内容"/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-ok="modal" class="sui-btn modify">修改</button>
+                            <button type="button" data-dismiss="modal" class="sui-btn cancel">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <h3>跟进记录</h3>
+    </div>
+    <div id="followSelect" class="clear">
+        <a class="gt modifyBtn">写跟进</a>
+        <form class="lf sui-form form-horizontal">
+            <div class="control-group">
+                <label class="control-label">跟进形式</label>
+                <div class="controls">
+                             <span class="sui-dropdown dropdown-bordered select">
+            <span class="dropdown-inner" id="followType">
+            <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+                <input type="hidden" /><i class="caret"></i><span>请选择</span>
+            </a>
+            <ul  role="menu" id="followTypeMenu" class="sui-dropdown-menu">
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >面谈</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >拜访</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >电话</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >微信</a></li>
+            </ul></span></span>
+                </div>
+            </div>
+        </form>
+        <form class="sui-form form-horizontal">
+            <div class="control-group">
+                <label class="control-label">跟进对象</label>
+                <div class="controls">
+                             <span class="sui-dropdown dropdown-bordered select">
+            <span class="dropdown-inner" id="followObj">
+            <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+                <input type="hidden" /><i class="caret"></i><span>请选择</span>
+            </a>
+            <ul  role="menu" id="followObjMenu" class="sui-dropdown-menu">
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >其他</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >销售员</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >销售经理</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >营销总</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >项目总经理</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >股东</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >董事长</a></li>
+            </ul></span></span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="page followPage">
+        <div id="followEdit">
+            <div>
+                <form class="lf sui-form form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label">项目跟进阶段</label>
+                        <div class="controls">
+                             <span class="sui-dropdown dropdown-bordered select">
+            <span class="dropdown-inner" id="followProgress">
+            <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+                <input type="hidden" /><i class="caret"></i><span>请选择</span>
+            </a>
+            <ul  role="menu" id="followProgressMenu" class="sui-dropdown-menu">
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >了解基本情况</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >关系维护</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >准备提报</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >已提报</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >商务谈判</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >合同签订</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >无效盘</a></li>
+            </ul></span></span>
+                        </div>
+                    </div>
+                </form>
+                <form class="lf sui-form form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label">跟进形式</label>
+                        <div class="controls">
+                             <span class="sui-dropdown dropdown-bordered select">
+            <span class="dropdown-inner" id="followTypeEdit">
+            <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+                <input type="hidden" /><i class="caret"></i><span>请选择</span>
+            </a>
+            <ul  role="menu" id="followTypeEditMenu" class="sui-dropdown-menu">
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >面谈</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >拜访</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >电话</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >微信</a></li>
+            </ul></span></span>
+                        </div>
+                    </div>
+                </form>
+                <form class="sui-form form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label">跟进对象</label>
+                        <div class="controls">
+                             <span class="sui-dropdown dropdown-bordered select">
+            <span class="dropdown-inner" id="followObjEdit">
+            <a  role="button" data-toggle="dropdown" class="dropdown-toggle">
+                <input type="hidden" /><i class="caret"></i><span>请选择</span>
+            </a>
+            <ul  role="menu" id="followObjEditMenu" class="sui-dropdown-menu">
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >其他</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >销售员</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >销售经理</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >营销总</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >项目总经理</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >股东</a></li>
+                <li role="presentation" ><a role="menuitem" tabindex="-1"  >董事长</a></li>
+            </ul></span></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <textarea name="" id="followText" cols="30" rows="10" placeholder="请输入内容...."></textarea>
+            <footer>
+                <input type="file" id="btn-file" accept="*/*"/>
+                <a class="modifyBtn" id="upLoad">上传附件</a><a class="modifyBtn" id="submit">提交</a>
+            </footer>
+        </div>
+        <div id="followMenu" class="clear">
+            <!--动态-->
+        </div>
+        <!--分页器-->
+        <div id="pages" class="clear">
+            <ul class="gt">
+                <li class="prev disabled"><a >&lt;</a></li>
+                <li>
+                    <ul id="pageNum">
+                        <!--动态生成-->
+                    </ul>
+                </li>
+                <li class="next gt"><a >&gt;</a></li>
+            </ul>
+        </div>
+    </div>
+<script type="text/javascript" src="../static/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="http://g.alicdn.com/sj/dpl/1.5.1/js/sui.min.js"></script>
+<script type="text/javascript" src="../static/js/setting.js"></script>
+<script type="text/javascript" src="../nav/js/nav.js"></script>
+<script type="text/javascript" src="../static/js/floorDetail.js"></script>
+</body>
+</html>

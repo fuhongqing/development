@@ -1,0 +1,593 @@
+/*隐藏百度地图logo，版权*/
+.BMap_cpyCtrl, .anchorBL{
+    display: none;
+}
+/*修正地图样式*/
+#mapAttress>div img{
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+/*错误提示*/
+.tipControl{
+    position: relative;
+}
+.tipText{
+    position: absolute;
+    font-size: 12px;
+    color: #FF4949;
+    left: 108px;
+    bottom: 0;
+    visibility: hidden;
+}
+td>.tipText{
+    visibility: hidden;
+}
+/*第一页*/
+/*多选*/
+img.right{
+    display: none;
+}
+/*面包屑*/
+header{
+    padding: 0 20px;
+    margin-top: 50px;
+}
+header>div.tabs{
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 1px solid #DDDDDD;
+}
+header>div.tabs>span{
+    font-size: 12px;
+}
+/*步骤条*/
+header>.sui-steps-round > div {
+    margin-left: -20px;
+}
+header>.sui-steps-round {
+    text-align: center;
+    margin: 30px 0;
+}
+header>.sui-steps-round label{
+    height: 15px;
+    overflow: initial;
+}
+header .sui-steps-round .gt {
+    margin-left: 90px;
+    background: #DDDDDD;
+}
+header .sui-steps-round .wrap .round {
+    line-height: 25px;
+    width: 30px;
+    height: 30px;
+    border-width: 2px;
+}
+header .sui-steps-round .wrap .bar {
+    width: 90px;
+    height: 2px;
+    position: relative;
+    top: 3px;
+    left: -10px;
+}
+header .sui-steps-round .finished .wrap .round {
+    background: #ED9127;
+    border-color: #ED9127;
+}
+header .sui-steps-round .finished .wrap .bar {
+    background: #ED9127;
+}
+header .sui-steps-round .finished label {
+    color: #ED9127;
+}
+header .sui-steps-round .current .wrap .round {
+    background: #DDDDDD;
+    border-color: #DDDDDD;
+}
+header .sui-steps-round .current .wrap .bar {
+    background: #DDDDDD;
+}
+header .sui-steps-round .current label {
+    color: #999999;
+}
+header .sui-steps-round .todo .wrap .round {
+    background: #fff;
+    border-color: #DDDDDD;
+    color: #DDDDDD;
+}
+header .sui-steps-round .todo .wrap .bar {
+    background: #DDDDDD;
+}
+header .sui-steps-round .todo label {
+    color: #DDDDDD;
+}
+header .sui-steps-round label {
+    position: relative;
+    left: -70px;
+    width: 130px;
+}
+#step-first label,
+#step-first1 label,
+#step-first2 label,
+#step-first3 label {
+    left: -95px;
+}
+#step-first .gt,
+#step-first1 .gt,
+#step-first2 .gt,
+#step-first3 .gt {
+    background: #DDDDDD;
+}
+#last label,
+#last1 label,
+#last2 label,
+#last3 label {
+    right: -40px;
+}
+#countContent{
+    display: none;
+}
+/*title*/
+header>h3,#countContent>section>h3,#addLand>section>h3{
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 1px solid #DDDDDD;
+}
+/*内容区*/
+section{
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.dropdown-inner{
+    width: 446px;
+    height: 36px;
+    line-height: 30px;
+}
+.sui-row-fluid{
+    margin-bottom: 10px;
+}
+.sui-form input[type="text"],#buildingType,#support {
+    width: 446px;
+    height: 36px;
+}
+.sui-form.form-horizontal .control-label{
+    text-align: left;
+    margin-right: 50px;
+    width: 108px;
+    height: 36px;
+    font-size: 14px;
+}
+/*下拉框角标*/
+.dropdown-inner .caret{
+    top: 7px;
+    position: relative;
+}
+/*地图详细地址*/
+#mapAttress{
+    width: 108px;
+    height: 36px;
+    line-height: 36px;
+    color:#fff;
+    border-radius: 4px;
+    background: #ED9127;
+    text-align: center;
+    position: relative;
+    right: 200px;
+    padding-left: 33px;
+    cursor: pointer;
+}
+#mapAttress>img{
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+}
+/*地图*/
+#mapAttress>div{
+    visibility: hidden;
+    text-align: left;
+    z-index: 15;
+    position: absolute;
+    left: -200px;
+    top:42px;
+    width: 486px;
+    height: 318px;
+    background: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 1px 3px 6px rgba(51, 48, 43, 0.84);
+}
+#mapAttress>div .dropdown-inner{
+    position: relative;
+    bottom: 6px;
+    width: 108px;
+}
+#mapAttress i.cityCaret{
+    color: #333;
+    position: absolute;
+    right: 363px;
+    top: 12px;
+}
+#mapCityName,#mapBorough{
+    width: 108px;
+}
+#mapBorough{
+    position: relative;
+    bottom: 6px;
+    margin: 0 4px;
+}
+#mapBorough .caret{
+    top: 6px;
+}
+#suggestId{
+    width: 230px;
+}
+#suggestMenu,#cityNameMenu,#mapCityNameMenu{
+    display: none;
+    max-height: 300px;
+    overflow: auto;
+    position: absolute;
+    left: 238px;
+    top: 48px;
+    z-index: 10;
+    border: 1px solid #ccc;
+    box-shadow: 1px 3px 3px rgba(51, 48, 43, 0.84);
+    background: #fff;
+    width: 245px;
+    height: auto;
+    border-radius: 4px;
+}
+#cityNameMenu{
+    width: 108px;
+    left: 3px;
+    top: 35px;
+}
+#mapCityNameMenu{
+    width: 108px;
+    left: 3px;
+    top: 40px;
+}
+#cityNameMenu>li,#mapCityNameMenu>li{
+    color: #333;
+    text-align: left;
+    padding-left: 10px;
+    cursor: pointer;
+}
+#suggestMenu>li{
+    width: 228px;
+    min-height: 30px;
+    line-height: 30px;
+    color: #333;
+    text-align: left;
+    padding-left: 10px;
+}
+#suggestMenu>li:hover,#cityNameMenu>li:hover,#mapCityNameMenu>li:hover{
+    color: #fff;
+    background: #ed9127;
+}
+#attrMap{
+    width: 100%;
+    height: 216px;
+    margin-top: -5px;
+}
+#confirm{
+    margin-top: 5px;
+    text-align: center;
+}
+#confirm>span{
+    display: inline-block;
+    width: 70px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 4px;
+    color: #BABABA;
+    background: #F8F8F8;
+    border: 1px solid #DDDDDD;
+    font-size: 14px;
+}
+#confirm>span:first-child{
+    margin-right: 43px;
+    color: #fff;
+    background: #ed9127;
+}
+#confirm>span:first-child:hover{
+    background: #DB7B0D;
+}
+/*市区板块*/
+#registerAttr .dropdown-inner{
+    position: relative;
+    bottom: 6px;
+    width: 108px;
+}
+#registerAttr>div{
+    position: relative;
+}
+#registerAttr>div>i.caret{
+    position: absolute;
+    right: 130px;
+    top: 12px;
+}
+#cityName{
+    width: 108px;
+ }
+#boroughDrop{
+    margin-left: 10px;
+}
+/*建筑类型*/
+#buildingTypeMenu,#supportMenu{
+    display: none;
+    border-radius: 0 0 2px 2px;
+    position: absolute;
+    background-color: #fff;
+    z-index: 9;
+    max-height: 300px;
+    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    left: 3px;
+    top: 35px;
+    width: 445px;
+}
+#buildingTypeMenu>li,#supportMenu>li{
+    height: 30px;
+    line-height: 30px;
+    padding:0 8px;
+}
+#buildingTypeMenu>li>img,#supportMenu>li>img{
+    position: relative;
+    top: 10px;
+}
+#buildingTypeMenu>li:hover,#supportMenu>li:hover{
+    background: #ED9127;
+    color: #fff;
+}
+#buildingType,#support{
+    line-height: 31px;
+    border: 1px solid #DDDDDD;
+    font-size: 14px;
+    border-radius: 4px;
+    padding-left: 8px;
+    color:#BEBEBE;
+    cursor: pointer;
+}
+/*甲方支持,建筑类型*/
+#support>a,#buildingType>a{
+    border: 1px solid rgba(237, 145, 39, 0.13);
+    color: #ED9127;
+    font-size: 12px;
+    border-radius: 4px;
+    background: rgba(237, 145, 39, 0.12);
+    display: inline-block;
+    min-width: 73px;
+    height: 24px;
+    line-height: 21px;
+    position: relative;
+    padding-left: 5px;
+}
+#support>a>img,#buildingType>a>img{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+.type>div>.caret{
+    position: relative;
+    right: 11px;
+    top: 14px;
+}
+/*下一步*/
+footer{
+    padding-right: 20px;
+}
+#basicInfo footer{
+    text-align: right;
+}
+footer>span{
+    display: inline-block;
+    width: 70px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    background: #fff;
+    border: 1px solid #ED9127;
+    border-radius: 4px;
+    color: #ED9127;
+    cursor: pointer;
+}
+footer>span:hover{
+    background: #ED9127;
+    color: #fff;
+}
+/*第二页*/
+/*体量*/
+#step-first2 label {
+    color: #BABABA;
+}
+#countContent2 .gt{
+    background: #BABABA;
+}
+#step-first2 .gt {
+    background: #ED9127;
+}
+/*销售信息*/
+#countContent>section>h3,#addLand>section>h3{
+    margin-bottom: 30px;
+}
+#countContent input.fromTo{
+    width: 176px;
+}
+#countContent .controls>span.to{
+    margin: 0 11px;
+}
+/*备案价*/
+#recordPrice{
+    width: 388px;
+}
+/*时间输入框*/
+#permitTime,#openTime{
+    width: 446px;
+    padding-left: 10px;
+}
+.controls>img.date{
+    position: absolute;
+    right: 0;
+    top: -4px;
+}
+#countContent footer{
+    padding: 0 20px;
+}
+/*第三页*/
+/*代理时间段*/
+#agent0{
+    display: none;
+}
+.agentRow{
+    margin-bottom: 0;
+}
+.agentRow .agentDate{
+    position: relative;
+    right: 45px;
+}
+.agentRow .end{
+    right: 70px;
+}
+.agentRow .sui-form input[type="text"].input-medium{
+    width: 176px;
+}
+.agentRow>div .controls{
+    position: relative;
+}
+.agentRow .add{
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+}
+/*合作情况，项目联系人*/
+#step-first3 .first .gt{
+    background: #ED9127;
+}
+#coop3 .gt{
+    background: #DDDDDD;
+}
+#step-first3 label,#count3 label{
+    color:#BABABA;
+}
+#cooprate{
+    display: none;
+}
+#cooprate .to,#cooprate .dateEnd{/*至*/
+    position: relative;
+    right: 35px;
+}
+#cooprate .dateEnd{
+    right: 25px;
+}
+/*项目联系人*/
+#contacts{
+    padding: 8px 20px 8px 0;
+}
+#contacts>span {
+    width: 70px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    background: #ED9127;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+#contacts>span:hover{
+    background:#DB7B0D;
+}
+#tbl{
+    margin-top: 8px;
+}
+#tbl .tableInput{
+    width: 234px;
+}
+#tbl tr {
+    height: 50px;
+}
+#tbl .sui-form {
+    margin: 0;
+}
+#tbl .sui-form .control-group {
+    margin: 0;
+}
+#tbl thead th {
+    text-align: center;
+    line-height: 37px;
+    font-size: 18px;
+}
+#tbl tbody > tr:first-child > td:not(:first-child) input {
+    left: 75px;
+    position: relative;
+}
+#tbl tbody > tr:first-child > td:not(:first-child) .control-group > img {
+    left: 74px;
+    top: 0;
+}
+#tbl tbody > tr:not(:first-child) > td {
+    text-align: center;
+}
+#tbl .star-gt {
+    width: 234px;
+}
+#tbl .star-gt input {
+    width: 234px;
+    height: 36px;
+}
+#tbl .star-gt .dropdown-inner {
+    width: 234px;
+    position: relative;
+    left: 70px;
+}
+#tbl .control-group > img {
+    position: relative;
+    left: 69px;
+    top: 7px;
+}
+#tbl .control-group > img.jobImg{
+    top: 0;
+}
+/*表格删除图标*/
+#tbl .reduce{
+    position: relative;
+    left: 120px;
+}
+#job{
+    position: relative;
+    left: 70px;
+    bottom: 8px;
+}
+#cooprate footer{
+    padding: 0 20px;
+}
+/*第四页，土地情况*/
+#addLand{
+    display: none;
+}
+#step-first .gt {
+    background: #ED9127;
+}
+#step-first label,
+#count label,
+#coop label {
+    color: #BABABA;
+}
+#addLand input.date{
+    width: 446px;
+    padding-left: 10px;
+}
+#addLand>section>h3{
+    margin-right: 20px;
+}
+#addLand>footer{
+    padding-left: 20px;
+}
+#addLand>footer>.gt{
+    background: #ED9127;
+    color: #fff;
+}
+#addLand>footer>.gt:hover{
+    background: #DB7B0D;
+}

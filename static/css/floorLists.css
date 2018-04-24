@@ -1,0 +1,314 @@
+.page{
+    width: 1200px;
+    margin-top: 0;
+    padding: 0 20px;
+    background: #fff;
+}
+/*面包屑导航*/
+div.tabs{
+    height: 36px;
+    line-height: 36px;
+}
+div.tabs>span{
+    font-size: 12px;
+}
+header{
+    background: #fff;
+    width: 1200px;
+    padding: 70px 20px 0 20px;
+    margin: 0 auto;
+}
+header>h2{
+    border-bottom: 1px solid #DDDDDD;
+    padding-bottom: 10px;
+}
+/*.btn样式*/
+.btn{
+    display: inline-block;
+    width: 90px;
+    height: 32px;
+    line-height: 32px;
+    color:#333333;
+    border: 1px solid #DDDDDD;
+    background: #F8F8F8;
+    border-radius: 4px;
+    text-align: center;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.btnActive{
+    background: #fff;
+    color:#ED9127;
+    border-color:  #ED9127;
+}
+/*筛选列表*/
+#filter{
+    background: #F8F8F8;
+    margin-bottom: 12px;
+    padding:20px 10px;
+    position: relative;
+}
+#filter>.borough{
+    display: none;
+    width: 566px;
+    position: absolute;
+    z-index: 10;
+    left: 20px;
+    top: 40px;
+    padding: 10px;
+    background: #fff;
+}
+#filter>.borough>li{
+    margin-bottom: 5px;
+}
+#borough>li{
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+#filter .moreUl{
+    display: none;
+}
+#filter>.area>.more{
+    color: #BABABA;
+}
+#filter>ul>li{
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#filter li.label{
+    width: 70px;
+    margin-right: 0;
+    cursor: default;
+}
+#filter li.active{
+    color: #ED9127;
+}
+#filter>.weihuTime input.date{
+    width: 120px;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 10px;
+}
+#filter>.weihuTime>li{
+    height: 36px;
+}
+#filter>.weihuTime .controls{
+    position: relative;
+}
+#filter>.weihuTime .dateImg{
+    position: absolute;
+    left: 86px;
+    top: -4px;
+}
+#filter>.weihuTime .end{
+    left: 245px;
+}
+#filter>.weihuTime span.to{
+    margin: 0 10px;
+}
+#filter>.weihuren{
+    position: absolute;
+    visibility: hidden;
+}
+#filter .control-label{
+    text-align: left;
+    font-size: 14px;
+    width: 70px;
+    height: 36px;
+}
+/*维护时间*/
+#weihuTimeSure{
+    width: 90px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    background: #F2F2F2;
+    cursor: pointer;
+}
+/*维护人*/
+#weihuDrop{
+    width: 120px;
+    height: 36px;
+    line-height: 32px;
+    background: #fff;
+}
+#weihuDrop .caret{
+    position: relative;
+    top: 7px;
+}
+#fold{
+    text-align: center;
+    cursor: pointer;
+    color: #BABABA;
+    font-size: 12px;
+}
+/*搜索框*/
+#search>form{
+    margin-bottom: 0;
+    height: 44px;
+}
+#search>a.btn{
+    border: none;
+    margin-left: 0;
+    background: #ed9127;
+    color: #fff;
+}
+#search>a.btn:hover {
+    background: #DB7B0D;
+}
+#search .input-append {
+    width: 300px;
+    border-radius: 4px;
+}
+#search .input-append input {
+    width: 264px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 4px 0 0 4px;
+}
+#search .input-append span {
+    display: inline-block;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    line-height: 25px;
+    background: #FCFBF9;
+    border-radius: 0 4px 4px 0;
+}
+#search .input-append span img{
+    max-width: initial;
+    position: relative;
+    bottom: 5px;
+    right: 5px;
+}
+/*表格*/
+.sui-table thead th{
+    vertical-align: middle;
+}
+#tblLists {
+    background: #fff;
+    border: 1px solid #DDDDDD;
+}
+#tblLists tr {
+    height: 50px;
+    border-bottom: 1px solid #DDDDDD;
+}
+#tblLists tr:last-child {
+    border-bottom: none;
+}
+#tblLists thead th {
+    border-right: 1px solid #DDDDDD;
+}
+#tblLists thead th>div:last-child{
+    margin-top: 10px;
+}
+#tblLists thead th>div>p{
+    position: relative;
+    left: 22px;
+}
+#tblLists thead th>div>p:first-child{
+    top: 5px;
+}
+#tblLists thead th>div>p:last-child{
+    left: 22px;
+    bottom:8px;
+}
+#tblLists thead th:first-child {
+    width: 246px;
+}
+#tblLists thead th:last-child {
+    border-right: none;
+}
+#tblLists tbody td {
+    border-right: 1px solid #DDDDDD;
+    cursor: pointer;
+}
+#tblLists tbody td:last-child {
+    border-right: none;
+}
+#tblLists tbody tr:nth-child(2n-1) {
+    background: #F8F8F8;
+}
+#tblLists tbody span.name{
+    color: #BABABA;
+    font-size: 12px;
+}
+#tblLists tbody div.gt{
+    width: 112px;
+    text-align: right;
+    margin-right: -10px;
+}
+#tblLists tbody div.gt>span{
+    display: inline-block;
+    width: 30px;
+    height: 16px;
+    line-height: 14px;
+    text-align: center;
+    border: 1px solid #ed9127;
+    border-radius: 2px;
+    color: #ed9127;
+    margin-right: 4px;
+    font-size: 10px;
+    transform: scale(.8);
+}
+#tblLists tbody div.gt>span.soldBtn{
+    border-color: #90C46C;
+    color: #90C46C;
+}
+#tblLists thead .count,#tblLists thead .totalVal,
+#tblLists thead .weihu{
+    cursor: pointer;
+}
+footer{
+    text-align: right;
+}
+#pages {
+    min-height: 92px;
+}
+#pages li {
+    float: left;
+    height: 28px;
+    line-height: 26px;
+    text-align: center;
+}
+#pages li a {
+    display: inline-block;
+    width: 36px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #DDDDDD;
+    border-left: none;
+    color: #333333;
+}
+#pageNum > li.gtFour,#pageNum > li.nextMore{
+    display: none;
+}
+#pageNum > li.active a{
+    color: #fff;
+    background: #ED9127;
+    border-color: #ED9127;
+}
+#pageNum > li.active > a:hover {
+    background: #DB7B0D;
+}
+#pages li.prev > a {
+    border-left: 1px solid #DDDDDD;
+}
+#pages li.active a {
+    color: #fff;
+    background: #ED9127;
+    border-color: #ED9127;
+}
+#pages li.disabled a {
+    background: #EEEEEE;
+    color: #DDDDDD;
+}

@@ -1,0 +1,120 @@
+@charset "utf-8";
+body {
+	margin: 0;
+	padding: 0;
+	color: #333333;
+	background: #F1F1F1;
+	font: 14px PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial;
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover{
+	text-decoration: none;
+}
+ul,ol,dl,h1,h2,h3,h4,h5,h6,p {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.clear:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.nav li{
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	-o-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.gt {
+	float: right;
+}
+.lf {
+	float: left;
+}
+.page img {
+	display: inline-block;
+	cursor: pointer;
+	vertical-align: middle;
+	-webkit-transform: scale(.5);
+	-moz-transform: scale(.5);
+	-ms-transform: scale(.5);
+	transform: scale(.5);
+}
+
+h3 {
+	font-size: 16px;
+}
+h2{
+	font-size: 20px;
+}
+.page {
+	margin: 0 auto;
+	width: 1200px;
+	min-height: 600px;
+	background: #fff;
+	padding-bottom: 50px;
+}
+input:focus {
+	outline: none;
+}
+.sui-dropdown-menu>.active a{
+	background: #ed9127;
+}
+/*修改下拉框默认样式*/
+.sui-dropdown.dropdown-bordered .dropdown-inner>.sui-dropdown-menu>li>a:hover{
+	background: #ed9127;
+}
+.sui-form input[type="text"] {
+	font-size: 14px;
+	box-shadow: none;
+	color: #333333;
+	padding-left: 10px;
+	border-radius: 4px;
+}
+input::-webkit-input-placeholder {
+	color: #BEBEBE!important;
+	font-size: 14px;
+}
+input:-moz-placeholder {
+	color: #BEBEBE!important;
+	font-size: 14px;
+}
+input::-moz-placeholder {
+	color: #BEBEBE!important;
+	font-size: 14px;
+}
+input:-ms-input-placeholder {
+	color: #BEBEBE!important;
+	font-size: 14px;
+}
+/*日历*/
+.datepicker {
+	width: 258px;
+	height: 258px;
+}
+.datepicker .table-condensed {
+	width: 258px;
+	height: 258px;
+}
+.dropdown-inner{
+	cursor: pointer;
+}
+.dropdown-inner span {
+	color: #BEBEBE;
+	font-size: 14px;
+}
+.input-daterange{
+	position: relative;
+}
